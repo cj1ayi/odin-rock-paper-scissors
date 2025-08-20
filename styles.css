@@ -1,0 +1,131 @@
+h1 {
+    font-family: "Martian Mono", monospace;
+    text-align: center;
+    padding-top: 15 rem;
+}
+
+#player, #computer {
+    font-family: "Martian Mono", monospace;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#rock-btn, #paper-btn, #scissors-btn {
+    font-family: "Martian Mono", monospace;
+    font-size: 20px;
+}
+
+#rock-btn, #paper-btn, #scissors-btn{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #6c757d;
+    box-shadow: 0 5px #495057;
+}
+
+#rock-btn:hover, #paper-btn:hover, #scissors-btn:hover{
+    box-shadow: 0 3px #495057;
+    top: 1px;
+}
+
+
+#rock-btn:active, #paper-btn:active, #scissors-btn:active {
+    box-shadow: 0 0 #495057;
+    top: 5px;
+}
+
+.player-buttons {
+    display: flex;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+.win-text {
+    color: green;
+    font-weight: bold;
+    font-family: "Martian Mono", monospace;
+    text-align: center;
+}
+
+.lose-text {
+    color: red;
+    font-style: italic;
+    font-family: "Martian Mono", monospace;
+    text-align: center;
+}
+
+.tie-text {
+    color: gray;
+    text-decoration: underline;
+    font-family: "Martian Mono", monospace;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.score-text {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 800;
+    color: blueviolet; 
+    text-align: center;
+    font-family: "Martian Mono", monospace;
+}
+
+
+#cpu-rock-btn, #cpu-paper-btn, #cpu-scissors-btn{
+    font-family: "Martian Mono", monospace;
+    font-size: 20px;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #6c757d;
+    box-shadow: 0 5px #495057;
+}
+
+#cpu-rock-btn:hover, #cpu-paper-btn:hover, #cpu-scissors-btn:hover{
+    box-shadow: 0 3px #495057;
+    top: 1px;
+}
+
+#cpu-rock-btn:active, #cpu-paper-btn:active, #cpu-scissors-btn:active{
+    box-shadow: 0 0 #495057;
+    top: 5px;
+}
+
+.cpu-buttons {
+    display: flex;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 3%;
+}

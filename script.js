@@ -6,13 +6,17 @@ function getComputerChoice()
 {
     let optionMax = 3;
     randomVal = Math.floor(Math.random() * optionMax)
+    let choice;
     switch (randomVal)
     {
-        case 0: return "rock";
-        case 1: return "paper";
-        case 2: return "scissors";
+        case 0: choice = "rock"; break;
+        case 1: choice = "paper"; break;
+        case 2: choice = "scissors"; break;
     }
-    //console.log(`Computer plays: ${randomVal}!`)
+    // Highlight the computer's choice
+    document.querySelectorAll('.cpu-buttons button').forEach(btn => btn.style.backgroundColor = '#6c757d');
+    document.querySelector(`#cpu-${choice}-btn`).style.backgroundColor = '#28a745';
+    return choice;
 
 }
 
@@ -29,13 +33,15 @@ function playRound(humanChoice, computerChoice)
 {
     humanChoice = humanChoice.toLowerCase();
     const results = document.querySelector(".results");
+    
 
     if (humanChoice === computerChoice) 
     {
         //console.log(`It's a tie! You both chose ${humanChoice}.`);
         const tieResult = document.createElement("h3");
-        tieResult.textContent = `It's a tie! You both chose ${humanChoice}.`;
         results.appendChild(tieResult);
+        tieResult.textContent = `It's a tie! You both chose ${humanChoice}.`;
+        tieResult.classList.add("tie-text"); 
 
     }
     
@@ -45,6 +51,7 @@ function playRound(humanChoice, computerChoice)
         {
             //console.log(`You win! ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}.`);
             const winResult = document.createElement("h3");
+            winResult.classList.add("win-text"); 
             winResult.textContent = `You win! ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}.`;
             results.appendChild(winResult);
             
@@ -54,10 +61,14 @@ function playRound(humanChoice, computerChoice)
         {
             //console.log(`You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`);
             const lostResult = document.createElement("h3");
-            lostResult.textContent = `You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`;
             results.appendChild(lostResult);
+            lostResult.textContent = `You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`;
+            lostResult.classList.add("lose-text");
+            
+            
             computerScore++;
-        }    
+        }   
+        runningScore.classList.add("score-text"); 
         runningScore.textContent = `Scores: Human - ${humanScore} \t Computer - ${computerScore}`;
 
 }
@@ -66,6 +77,7 @@ function playRound(humanChoice, computerChoice)
 
 const score = document.querySelector(".score");
 const runningScore = document.createElement("h2");
+runningScore.classList.add("score-text");
 score.appendChild(runningScore);
 
 //console.log(`Final Score -> Human: ${humanScore}, Computer: ${computerScore}`);
